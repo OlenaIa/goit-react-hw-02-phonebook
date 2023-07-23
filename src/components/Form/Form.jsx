@@ -1,12 +1,17 @@
 import { Component } from "react";
 import { FormStyle } from "./Form.styled";
 import { InputStyle, LabelStyle, ButtonStyle } from "components/App.styled";
+import PropTypes from 'prop-types'
 
 export class Form extends Component {
     state = {
         name: '',
         number: '',
     }  
+
+    static propTypes = {
+        onSubmit: PropTypes.func.isRequired
+    }
     
     onSubmitAddContact = (event) => {
         event.preventDefault();

@@ -6,5 +6,5 @@ export const FormStyle = styled.form`
     padding: 10px;
     gap: 20px;
     flex-wrap: wrap;
-    border: 1px solid #31d37a;
+    border: 2px solid #31d37a;
 `;

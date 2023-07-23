@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid'
 import { ContactsList } from "./ContactsList/ContactsList";
 import { Filter } from "./Filter/Filter";
 import { Container } from "./App.styled";
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 
 export class App extends Component {
@@ -23,7 +24,12 @@ export class App extends Component {
       if (this.isNameNew(contacts, newObj) === undefined) {
         return { contacts: [...contacts, newObj] }
       } else {
-        alert(`${newObj.name} is already in contacts`)
+        Notify.warning(`${newObj.name} is already in contacts`, {
+          width: '400px',
+          position: 'center-center',
+          timeout: 3000,
+          fontSize: '20px',
+        });
         return { contacts: [...contacts] }
       };
     });
